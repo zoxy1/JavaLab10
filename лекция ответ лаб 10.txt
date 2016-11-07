@@ -1,0 +1,16 @@
+Ну и конечно, дополнительно мы могли бы еще проверить, является ли данное животное криптонианским, но не стали это делать, чтобы не загромождать код примера. Как выполнить такую проверку?
+private static void всехКормить(Flyer[] летуны) {
+       
+       for (int i = 0; i < летуны.length; i++) {
+           if (летуны[i] instanceof Animal){
+               System.out.println("Этот летун оказался животным и его нужно кормить");
+               System.out.println(летуны[i].getClass().getName());
+               ((Animal)летуны[i]).eat();
+           }
+			if (летуны[i] instanceof Kryptonian){
+               System.out.println("Этот летун оказался криптонианцем");
+               System.out.println(летуны[i].getClass().getName());
+               ((Kryptonian)летуны[i]).eat();
+           }
+       }
+   }
