@@ -4,8 +4,8 @@ public class Editor extends Employee {
 
 	private boolean EditType;
 	private StringBuffer skill = new StringBuffer();
-	
-	
+	private StringBuffer editors = new StringBuffer();
+
 	public Editor() {
 
 	}
@@ -35,18 +35,29 @@ public class Editor extends Employee {
 
 	}
 
+	public void setEditors(String editors) {
+
+		if (this.editors.length() == 0) {
+			this.editors.append(editors);
+		} else {
+			this.editors.append(", " + editors);
+		}
+
+	}
+
+	public StringBuffer getEditors() {
+		return editors;
+	}
+
 	public void displayInformation() {
 		super.displayInformation();
 		System.out.println("Навыки:" + skill.toString());
 		if (EditType == true) {
 			System.out.print("Предпочитает электронное редактирование.");
 		} else {
-
+			System.out.print("Предпочитает бумажное редактирование");
 		}
-		System.out.print("Предпочитает бумажное редактирование.");
+		System.out.print("\nПредпочитает редакторы:" + editors.toString());
 	}
 
-	
-
-	
 }

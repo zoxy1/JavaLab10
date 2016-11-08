@@ -16,6 +16,8 @@ public class EmployeeTest {
 		myEditor.setSkill("technical editing");
 		myEditor.setSkill("typing");
 		myEditor.setEditType(false);
+		myEditor.setEditors("Notepad");
+		myEditor.setEditors("TextPad");
 		myEditor.displayInformation();
 
 		myGI.setName("Sara Smith");
@@ -35,7 +37,7 @@ public class EmployeeTest {
 		myTW.setLevel(1);
 		myTW.setSkill("technical writing");
 		myTW.setEditors("Microsoft Word");
-		myTW.setEditors("Microsoft Exel");
+		myTW.setEditors("Notepad++");
 		myTW.displayInformation();
 
 		myManager.setName("Susan Smith");
