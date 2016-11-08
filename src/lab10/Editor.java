@@ -1,27 +1,52 @@
 package lab10;
 
-public class Editor extends Specialist{
-    
+public class Editor extends Employee {
+
 	private boolean EditType;
-    	
+	private StringBuffer skill = new StringBuffer();
+	
 	
 	public Editor() {
+
+	}
+
+	public boolean getEditType() {
+		return EditType;
+	}
+
+	public void setEditType(boolean editType) {
+		this.EditType = editType;
+	}
+
+	public String getSkill() {
+		return skill.toString();
+	}
+
+	public void setSkill(String skill) {
+		if (skill.contains("0") || skill.contains("1") || skill.contains("2") || skill.contains("3") || skill.contains("4") || skill.contains("5") || skill.contains("6") || skill.contains("7") || skill.contains("8") || skill.contains("9")) {
+			System.out.println("\nНаименование навыка не должно содержать цифр!");
+		} else {
+			if (this.skill.length() == 0) {
+				this.skill.append(skill);
+			} else {
+				this.skill.append(", " + skill);
+			}
+		}
+
+	}
+
+	public void displayInformation() {
+		super.displayInformation();
+		System.out.println("Навыки:" + skill.toString());
+		if (EditType == true) {
+			System.out.print("Предпочитает электронное редактирование.");
+		} else {
+
+		}
+		System.out.print("Предпочитает бумажное редактирование.");
+	}
+
 	
-    }
-    public boolean getEditType() {
-	return EditType;
-    }
-    public void setEditType(boolean editType) {
-	this.EditType = editType;
-    }
-    public void displayInformation(){
-	super.displayInformation();    
-	if(EditType==true){
-	    System.out.print(", предпочитает электронное редактирование");
-	}
-	else{
-	    
-	}
-	System.out.print(", предпочитает бумажное редактирование");
-	}
+
+	
 }

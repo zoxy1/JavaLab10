@@ -1,29 +1,37 @@
 package lab10;
 
-public class Manager extends Employee{
-    
-    private StringBuffer listEmployees=new StringBuffer();
-    
-    public Manager() {
-	
-    }
-    public String getlistEmployees(){
-	return listEmployees.toString();
-    }
-    
-    
-    public void addListEmployees(Employee emp){
-	if(this.listEmployees.length()==0){
-	    this.listEmployees.append(emp.getName());    
+import java.util.ArrayList;
+
+public class Manager extends Employee {
+
+	private ArrayList<Employee> listEmployees = new ArrayList<>();
+
+	public Manager() {
+
 	}
-	else{
-	    this.listEmployees.append(", "+emp.getName());     
+
+	public String getlistEmployees() {
+
+		return listEmployees.toString();
 	}
-	
-    }
-    
-    public void displayInformation(){
-	super.displayInformation();    
-	System.out.print("Cписок починенных у менеджера:"+listEmployees.toString());
+
+	public void addListEmployees(Employee emp) {
+
+		this.listEmployees.add(emp);
+
+	}
+
+	public void displayInformation() {
+		super.displayInformation();
+		System.out.print("Cписок починенных у менеджера:");
+
+		for (int i = 0; i < listEmployees.size(); i++) {
+			if (i == 0) {
+				System.out.print(listEmployees.get(i).getName());
+			} else {
+				System.out.print(", " + listEmployees.get(i).getName());
+			}
+		}
+
 	}
 }
